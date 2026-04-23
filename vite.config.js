@@ -5,7 +5,7 @@ import { resolve } from "path";
 export default defineConfig({
   // GitHub Pages 建置配置
   build: {
-    outDir: "pages", // 輸出到 pages 目錄
+    outDir: "docs", // 輸出到 docs 目錄
     emptyOutDir: true, // 建置前清空目錄
     assetsDir: "assets", // 資源檔案目錄
     sourcemap: true, // 產生 source map 用於除錯
@@ -20,7 +20,7 @@ export default defineConfig({
       name: "github-pages",
       writeBundle() {
         // 創建 .nojekyll 檔案（GitHub Pages 需要）
-        const nojekyllPath = resolve("pages", ".nojekyll");
+        const nojekyllPath = resolve("docs", ".nojekyll");
         writeFileSync(nojekyllPath, "");
         console.log("✓ Created .nojekyll file for GitHub Pages");
       },

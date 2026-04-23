@@ -10,25 +10,25 @@ npm run dev          # 啟動開發伺服器
 ### 建置
 ```bash
 npm run build        # 一般建置（輸出到 dist）
-npm run build:pages  # GitHub Pages 建置（輸出到 pages）
+npm run build:docs   # GitHub Pages 建置（輸出到 docs）
 ```
 
 ### 預覽
 ```bash
 npm run preview       # 預覽一般建置
-npm run preview:pages # 預覽 GitHub Pages 建置
+npm run preview:docs  # 預覽 GitHub Pages 建置
 ```
 
 ## GitHub Pages 部署步驟
 
 1. **建置專案**
    ```bash
-   npm run build:pages
+   npm run build:docs
    ```
 
-2. **提交 pages 目錄到 Git**
+2. **提交 docs 目錄到 Git**
    ```bash
-   git add pages/
+   git add docs/
    git commit -m "Build for GitHub Pages"
    git push
    ```
@@ -39,7 +39,7 @@ npm run preview:pages # 預覽 GitHub Pages 建置
    - 左側選擇 "Pages"
    - Source 設定為 "Deploy from a branch"
    - Branch 選擇 "main"
-   - Folder 選擇 "/pages"
+   - Folder 選擇 "/docs"
    - 點選 "Save"
 
 4. **等待部署完成**
@@ -48,7 +48,7 @@ npm run preview:pages # 預覽 GitHub Pages 建置
 
 ## 注意事項
 
-- `pages` 目錄是建置輸出目錄，應該提交到 Git 中
+- `docs` 目錄是建置輸出目錄，應該提交到 Git 中
 - 建置時會自動創建 `.nojekyll` 檔案，確保 GitHub Pages 正確處理
 - 使用相對路徑 (`./`) 確保在 GitHub Pages 子目錄中正常運作
-- 每次有程式碼更新時，重新執行建置命令並提交 `pages` 目錄
+- 每次有程式碼更新時，重新執行建置命令並提交 `docs` 目錄
