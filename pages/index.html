@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lit-tree-view</title>
+    <style>
+      .demo {
+        font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+        max-width: 480px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+      .demo h2 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 16px;
+        color: #111827;
+      }
+      @media (prefers-color-scheme: dark) {
+        .demo h2 {
+          color: #f3f4f6;
+        }
+      }
+      .result {
+        margin-top: 16px;
+        font-size: 13px;
+        color: #6b7280;
+        min-height: 20px;
+      }
+      .result span {
+        font-weight: 600;
+        color: #5b21b6;
+      }
+      @media (prefers-color-scheme: dark) {
+        .result span {
+          color: #c4b5fd;
+        }
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/index-D7mj5Gf8.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-gR6FGjAy.css">
+  </head>
+  <body>
+    <div class="demo">
+      <h2>部門選擇 Tree View</h2>
+      <dept-tree-view id="tree"></dept-tree-view>
+      <p class="result" id="result">尚未選取任何單位</p>
+    </div>
+
+  </body>
+</html>

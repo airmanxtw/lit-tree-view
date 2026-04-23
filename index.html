@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>lit-tree-view</title>
     <link rel="stylesheet" href="./src/index.css" />
-    <script type="module" src="/src/my-element.js"></script>
-    <script type="module" src="/src/dept-tree-view.js"></script>
+    <script type="module" src="./src/my-element.js"></script>
+    <script type="module" src="src/dept-tree-view.js"></script>
     <style>
       .demo {
-        font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+        font-family: system-ui, "Segoe UI", Roboto, sans-serif;
         max-width: 480px;
         margin: 40px auto;
         padding: 0 20px;
@@ -22,7 +22,9 @@
         color: #111827;
       }
       @media (prefers-color-scheme: dark) {
-        .demo h2 { color: #f3f4f6; }
+        .demo h2 {
+          color: #f3f4f6;
+        }
       }
       .result {
         margin-top: 16px;
@@ -35,7 +37,9 @@
         color: #5b21b6;
       }
       @media (prefers-color-scheme: dark) {
-        .result span { color: #c4b5fd; }
+        .result span {
+          color: #c4b5fd;
+        }
       }
     </style>
   </head>
@@ -48,34 +52,34 @@
 
     <script type="module">
       const DEPTS = [
-        { deptno: '1',   deptname: '總公司',     parentno: '' },
-        { deptno: '1-1', deptname: '業務處',     parentno: '1' },
-        { deptno: '1-2', deptname: '技術處',     parentno: '1' },
-        { deptno: '1-3', deptname: '行政處',     parentno: '1' },
-        { deptno: '1-1-1', deptname: '北區業務部', parentno: '1-1' },
-        { deptno: '1-1-2', deptname: '中區業務部', parentno: '1-1' },
-        { deptno: '1-1-3', deptname: '南區業務部', parentno: '1-1' },
-        { deptno: '1-2-1', deptname: '前端工程部', parentno: '1-2' },
-        { deptno: '1-2-2', deptname: '後端工程部', parentno: '1-2' },
-        { deptno: '1-2-3', deptname: '資安部',     parentno: '1-2' },
-        { deptno: '1-3-1', deptname: '人資部',     parentno: '1-3' },
-        { deptno: '1-3-2', deptname: '財務部',     parentno: '1-3' },
-        { deptno: '1-2-1-1', deptname: 'UI/UX 組', parentno: '1-2-1' },
-        { deptno: '1-2-1-2', deptname: '元件開發組', parentno: '1-2-1' },
-      ]
+        { deptno: "1", deptname: "總公司", parentno: "" },
+        { deptno: "1-1", deptname: "業務處", parentno: "1" },
+        { deptno: "1-2", deptname: "技術處", parentno: "1" },
+        { deptno: "1-3", deptname: "行政處", parentno: "1" },
+        { deptno: "1-1-1", deptname: "北區業務部", parentno: "1-1" },
+        { deptno: "1-1-2", deptname: "中區業務部", parentno: "1-1" },
+        { deptno: "1-1-3", deptname: "南區業務部", parentno: "1-1" },
+        { deptno: "1-2-1", deptname: "前端工程部", parentno: "1-2" },
+        { deptno: "1-2-2", deptname: "後端工程部", parentno: "1-2" },
+        { deptno: "1-2-3", deptname: "資安部", parentno: "1-2" },
+        { deptno: "1-3-1", deptname: "人資部", parentno: "1-3" },
+        { deptno: "1-3-2", deptname: "財務部", parentno: "1-3" },
+        { deptno: "1-2-1-1", deptname: "UI/UX 組", parentno: "1-2-1" },
+        { deptno: "1-2-1-2", deptname: "元件開發組", parentno: "1-2-1" },
+      ];
 
-      const tree = document.getElementById('tree')
-      const result = document.getElementById('result')
+      const tree = document.getElementById("tree");
+      const result = document.getElementById("result");
 
       // Assign after element is defined
-      customElements.whenDefined('dept-tree-view').then(() => {
-        tree.depts = DEPTS
-      })
+      customElements.whenDefined("dept-tree-view").then(() => {
+        tree.depts = DEPTS;
+      });
 
-      tree.addEventListener('dept-selected', (e) => {
-        const { deptno, deptname, parentno } = e.detail
-        result.innerHTML = `已選取：<span>${deptname}</span>（代碼：${deptno}，上層：${parentno || '無'}）`
-      })
+      tree.addEventListener("dept-selected", (e) => {
+        const { deptno, deptname, parentno } = e.detail;
+        result.innerHTML = `已選取：<span>${deptname}</span>（代碼：${deptno}，上層：${parentno || "無"}）`;
+      });
     </script>
   </body>
 </html>
